@@ -1,9 +1,13 @@
 export default class HomeController {
-    constructor() {
-        this.name = 'world!';
+    constructor($state) {
+        this.$state = $state;
+        this.name = 'okay!';
     }
 
     changeName() {
-        this.name = 'a new name!';
+        this.$state.go('edit', {
+            name: 'asd'
+        });
     }
 }
+HomeController.$inject = ['$state']
